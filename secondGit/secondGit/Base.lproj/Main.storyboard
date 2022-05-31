@@ -33,6 +33,9 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="changeToMinValueColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5j8-eZ-3yw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Mo-rQ-xf3">
                                 <rect key="frame" x="155" y="76" width="118" height="48"/>
@@ -51,6 +54,10 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="changeToMaxValueColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XKe-6n-nhJ"/>
+                                    <action selector="changeToMediumValueColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OgC-HE-De4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFe-6b-KDa">
                                 <rect key="frame" x="307" y="76" width="101" height="48"/>
@@ -69,6 +76,9 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="changeToMaxValueColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zNv-yL-OtF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Red" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8l-Zc-WTD">
                                 <rect key="frame" x="20" y="191" width="102" height="52"/>
@@ -115,13 +125,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qvM-sJ-ZZ6">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="qvM-sJ-ZZ6">
                                 <rect key="frame" x="188" y="203" width="222" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderRed:" destination="BYZ-38-t0r" eventType="valueChanged" id="4Kh-9N-04J"/>
+                                </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LA0-51-0JT">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="LA0-51-0JT">
                                 <rect key="frame" x="188" y="403" width="222" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderBlue:" destination="BYZ-38-t0r" eventType="valueChanged" id="bdE-jQ-fNS"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mixed Color:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grm-b1-ADh">
                                 <rect key="frame" x="20" y="489" width="194" height="42"/>
@@ -130,9 +146,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TlF-MP-Qjc">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="TlF-MP-Qjc">
                                 <rect key="frame" x="188" y="307" width="222" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderGreen:" destination="BYZ-38-t0r" eventType="valueChanged" id="S4c-iu-m3c"/>
+                                </connections>
                             </slider>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMU-pB-Sd3">
                                 <rect key="frame" x="72" y="569" width="284" height="185"/>
@@ -150,6 +169,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="labelBlueColor" destination="Ml0-zH-uaA" id="TQP-aF-c0I"/>
+                        <outlet property="labelGreenColor" destination="Lj8-p4-b9R" id="Kgp-lf-wzb"/>
+                        <outlet property="labelRedColoe" destination="hUB-nI-Gtl" id="qjm-fT-aCV"/>
+                        <outlet property="sliderBlue" destination="LA0-51-0JT" id="eVd-4I-FBK"/>
+                        <outlet property="sliderGreen" destination="TlF-MP-Qjc" id="b0Y-2f-ALo"/>
+                        <outlet property="sliderRed" destination="qvM-sJ-ZZ6" id="6OL-sZ-DKi"/>
+                        <outlet property="viewColorChange" destination="WkC-F6-UkA" id="RKe-Vi-wWA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
